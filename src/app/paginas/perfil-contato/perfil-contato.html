@@ -1,0 +1,49 @@
+<app-container>
+  <header>
+    <section class="cabecalho-link">
+      <img src="logo.png" alt="" srcset="" />
+      <div>
+        <button routerLink="/lista-contatos">
+          <img class="seta" src="arrow-left.png" alt="" />Voltar
+        </button>
+      </div>
+    </section>
+    <section class="cabecalho-contato">
+      <img src="perfil-contato.png" alt="" srcset="" />
+      <h1>Editar contato</h1>
+    </section>
+  </header>
+  <app-separador></app-separador>
+
+  <section class="perfil">
+    <ul>
+      <p>oi</p>
+      <app-separador></app-separador>
+
+      <li>
+        <i class="material-symbols">call</i>
+        <strong>Telefone</strong>
+      </li>
+      <li>{{ contato.telefone }}</li>
+      <li>
+        <i class="material-symbols">mail</i>
+        <strong>Email</strong>
+      </li>
+      <li>{{ contato.email }}</li>
+      <li>
+        <i class="material-symbols">cake</i>
+        <strong>Data de nascimento</strong>
+      </li>
+      <li>{{ contato.aniversario }}</li>
+      <li>
+        <i class="material-symbols">globe</i>
+        <strong>Redes sociais</strong>
+      </li>
+      <li>{{ contato.redes }}</li>
+    </ul>
+    <div class="botoes">
+      <button class="botao-excluir">Excluir contato</button>
+      <button class="botao-editar">Editar</button>
+    </div>
+  </section>
+</app-container>

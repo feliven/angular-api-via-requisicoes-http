@@ -10,6 +10,7 @@ import { Separador } from '../../componentes/separador/separador';
 import { Contato } from '../../componentes/contato/contato';
 import { ContatoService } from '../../servicos/contato-service';
 import { InterfaceContato } from '../../interfaces/interface-contato';
+import { PerfilContato } from '../perfil-contato/perfil-contato';
 
 // import agenda from '../../agenda.json';
 
@@ -23,6 +24,7 @@ import { InterfaceContato } from '../../interfaces/interface-contato';
     FormsModule,
     ReactiveFormsModule,
     RouterLink,
+    PerfilContato,
   ],
   templateUrl: './lista-contatos.html',
   styleUrl: './lista-contatos.css',

@@ -36,7 +36,12 @@ export class ListaContatos implements OnInit {
   constructor(private contatoService: ContatoService) {}
 
   ngOnInit() {
-    this.contatos = this.contatoService.getContatos();
+    this.contatoService.getContatos().subscribe((listaContatos) => {
+      this.contatos = listaContatos;
+    });
+    // O service está nos retornando um Observable e o componente de lista de contatos está agindo
+    // como um Observer (observador) que está querendo ser notificado dessas informações.
+    // Para conseguir fazer essa ligação entre Observer e Observable, utilizamos o método subscribe().
   }
 
   // Remove os acentos de uma string

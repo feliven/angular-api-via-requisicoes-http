@@ -1,6 +1,7 @@
 import { Injectable } from '@angular/core';
 import { InterfaceContato } from '../interfaces/interface-contato';
 import { HttpClient } from '@angular/common/http';
+import { Observable } from 'rxjs';
 
 @Injectable({
   providedIn: 'root',
@@ -10,9 +11,11 @@ export class ContatoService {
 
   private readonly enderecoAPI = 'http://localhost:3000/contatos';
 
-  getContatos() {
+  getContatos(): Observable<InterfaceContato[]> {
     return this.http.get<InterfaceContato[]>(this.enderecoAPI);
   }
 
-  setContato(contato: InterfaceContato) {}
+  setContato(contato: InterfaceContato) {
+    return this.http.post<InterfaceContato>(this.enderecoAPI, contato);
+  }
 }

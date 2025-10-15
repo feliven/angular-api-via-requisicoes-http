@@ -48,9 +48,10 @@ export class FormularioContato implements OnInit {
     if (this.formularioContato.valid) {
       console.log(this.formularioContato.value);
       const novoContato: InterfaceContato = this.formularioContato.value;
-      this.contatoService.setContato(novoContato);
-      this.formularioContato.reset();
-      this.router.navigateByUrl('/lista-contatos');
+      this.contatoService.setContato(novoContato).subscribe(() => {
+        this.formularioContato.reset();
+        this.router.navigateByUrl('/lista-contatos');
+      });
     } else {
       console.log('FORMULÁRIO INVÀLIDO!!!');
     }

@@ -2,13 +2,13 @@ import { Component, OnInit } from '@angular/core';
 import { Container } from '../../componentes/container/container';
 import { Separador } from '../../componentes/separador/separador';
 import { InterfaceContato } from '../../interfaces/interface-contato';
-import { ActivatedRoute, Router } from '@angular/router';
+import { ActivatedRoute, Router, RouterLink } from '@angular/router';
 import { ContatoService } from '../../servicos/contato-service';
 import { Cabecalho } from '../../componentes/cabecalho/cabecalho';
 
 @Component({
   selector: 'app-perfil-contato',
-  imports: [Container, Separador, Cabecalho],
+  imports: [Container, Separador, Cabecalho, RouterLink],
   templateUrl: './perfil-contato.html',
   styleUrl: './perfil-contato.css',
 })

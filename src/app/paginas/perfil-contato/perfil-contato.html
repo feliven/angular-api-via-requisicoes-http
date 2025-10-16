@@ -2,7 +2,7 @@
   <app-cabecalho
     [telaInicial]="false"
     [bannerSrc]="'perfil-contato.png'"
-    [titulo]="'Editar contato'"
+    [titulo]="'Perfil do contato'"
   ></app-cabecalho>
 
   <section class="perfil">
@@ -41,7 +41,9 @@
       <button (click)="excluirContato()" class="botao-excluir">
         Excluir contato
       </button>
-      <button class="botao-editar">Editar</button>
+      <button class="botao-editar" [routerLink]="['/formulario', contato.id]">
+        Editar
+      </button>
     </div>
   </section>
 </app-container>

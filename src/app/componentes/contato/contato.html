@@ -1,6 +1,13 @@
 <section class="contato">
   <ul>
+    @if(avatar){
     <img [src]="avatar" class="avatar" [routerLink]="['/perfil-contato', id]" />
+    } @else {
+    <i class="material-symbols" [routerLink]="['/perfil-contato', id]"
+      >no_photography</i
+    >
+
+    }
     <li>
       <strong>{{ nome }}</strong>
     </li>

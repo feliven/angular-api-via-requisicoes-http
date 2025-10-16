@@ -16,10 +16,16 @@
   <app-separador></app-separador>
 
   <section class="perfil">
+    <div class="imagem-perfil">
+      @if(contato.avatar){
+      <img [src]="contato.avatar" alt="" />
+      } @else{
+      <i class="material-symbols">no_photography</i>
+      }
+      <h2><strong> {{contato.nome}} </strong></h2>
+    </div>
     <ul>
-      <p>oi</p>
       <app-separador></app-separador>
-
       <li>
         <i class="material-symbols">call</i>
         <strong>Telefone</strong>

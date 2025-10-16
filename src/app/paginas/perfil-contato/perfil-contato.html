@@ -42,7 +42,9 @@
       <li>{{ contato.redes }}</li>
     </ul>
     <div class="botoes">
-      <button class="botao-excluir">Excluir contato</button>
+      <button (click)="excluirContato()" class="botao-excluir">
+        Excluir contato
+      </button>
       <button class="botao-editar">Editar</button>
     </div>
   </section>

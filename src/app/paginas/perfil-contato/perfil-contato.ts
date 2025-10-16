@@ -37,4 +37,10 @@ export class PerfilContato implements OnInit {
         .subscribe((contato) => (this.contato = contato));
     }
   }
+
+  excluirContato() {
+    this.contatoService
+      .excluirContato(this.contato.id)
+      .subscribe(() => this.router.navigateByUrl('/lista-contatos'));
+  }
 }

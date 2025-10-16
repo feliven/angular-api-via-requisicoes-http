@@ -41,6 +41,7 @@ export class FormularioContato implements OnInit {
   inicializarFormulario() {
     this.formularioContato = new FormGroup({
       nome: new FormControl('', Validators.required),
+      avatar: new FormControl(''),
       telefone: new FormControl('', Validators.required),
       email: new FormControl('', Validators.email),
       aniversario: new FormControl('02/02/2020'),
@@ -78,6 +79,25 @@ export class FormularioContato implements OnInit {
     } else {
       console.log('FORMULÁRIO INVÀLIDO!!!');
     }
+  }
+
+  aoSelecionarArquivo(evento: Event) {
+    const eventoTarget = evento.target as HTMLInputElement;
+    if (eventoTarget.files) {
+      const imagem: File = eventoTarget.files[0];
+      this.lerArquivo(imagem);
+    }
+  }
+
+  lerArquivo(arquivo: File) {
+    const reader = new FileReader();
+
+    reader.onload = () => {
+      if (reader.result) {
+        this.formularioContato.get('avatar')?.setValue(reader.result);
+      }
+    };
+    reader.readAsDataURL(arquivo);
   }
 
   cancelar() {

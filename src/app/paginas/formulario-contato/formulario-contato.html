@@ -19,7 +19,13 @@
     <div role="button" class="imagem-contato">
       <i class="material-symbols">add</i>
       <label for="avatar">Adicione a imagem</label>
-      <input type="file" accept="image/*" id="avatar" required />
+      <input
+        type="file"
+        accept="image/*"
+        id="avatar"
+        required
+        (change)="aoSelecionarArquivo($event)"
+      />
     </div>
     <label for="nome">Nome</label>
     <input

@@ -16,6 +16,11 @@
   <app-separador></app-separador>
 
   <form [formGroup]="formularioContato" (ngSubmit)="salvarContato()">
+    <div role="button" class="imagem-contato">
+      <i class="material-symbols">add</i>
+      <label for="avatar">Adicione a imagem</label>
+      <input type="file" accept="image/*" id="avatar" required />
+    </div>
     <label for="nome">Nome</label>
     <input
       type="text"

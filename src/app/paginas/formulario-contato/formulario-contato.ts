@@ -83,5 +83,6 @@ export class FormularioContato implements OnInit {
   cancelar() {
     console.log('CANCELLED!');
     this.formularioContato.reset();
+    this.router.navigateByUrl('/lista-contatos');
   }
 }

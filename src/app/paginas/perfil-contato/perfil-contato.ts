@@ -4,10 +4,11 @@ import { Separador } from '../../componentes/separador/separador';
 import { InterfaceContato } from '../../interfaces/interface-contato';
 import { ActivatedRoute, Router } from '@angular/router';
 import { ContatoService } from '../../servicos/contato-service';
+import { Cabecalho } from '../../componentes/cabecalho/cabecalho';
 
 @Component({
   selector: 'app-perfil-contato',
-  imports: [Container, Separador],
+  imports: [Container, Separador, Cabecalho],
   templateUrl: './perfil-contato.html',
   styleUrl: './perfil-contato.css',
 })

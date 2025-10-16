@@ -1,5 +1,9 @@
 <app-container>
-  <app-cabecalho></app-cabecalho>
+  <app-cabecalho
+    [telaInicial]="true"
+    [bannerSrc]="'banner.png'"
+    [titulo]="`Organize, <span style='color: fd9843'>conecte,</span> simplifique!`"
+  ></app-cabecalho>
 
   <input
     type="search"

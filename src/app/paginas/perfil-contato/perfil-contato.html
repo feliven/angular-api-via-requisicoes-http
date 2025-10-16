@@ -1,19 +1,9 @@
 <app-container>
-  <header>
-    <section class="cabecalho-link">
-      <img src="logo.png" alt="" srcset="" />
-      <div>
-        <button routerLink="/lista-contatos">
-          <img class="seta" src="arrow-left.png" alt="" />Voltar
-        </button>
-      </div>
-    </section>
-    <section class="cabecalho-contato">
-      <img src="perfil-contato.png" alt="" srcset="" />
-      <h1>Editar contato</h1>
-    </section>
-  </header>
-  <app-separador></app-separador>
+  <app-cabecalho
+    [telaInicial]="false"
+    [bannerSrc]="'perfil-contato.png'"
+    [titulo]="'Editar contato'"
+  ></app-cabecalho>
 
   <section class="perfil">
     <div class="imagem-perfil">

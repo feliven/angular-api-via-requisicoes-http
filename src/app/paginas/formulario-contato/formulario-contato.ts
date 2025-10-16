@@ -6,12 +6,13 @@ import {
   ReactiveFormsModule,
   Validators,
 } from '@angular/forms';
-import { ActivatedRoute, Router, RouterLink } from '@angular/router';
+import { ActivatedRoute, Router } from '@angular/router';
 import { Container } from '../../componentes/container/container';
 import { Separador } from '../../componentes/separador/separador';
 import { ContatoService } from '../../servicos/contato-service';
 import { InterfaceContato } from '../../interfaces/interface-contato';
 import { MensagemErro } from '../../componentes/mensagem-erro/mensagem-erro';
+import { Cabecalho } from '../../componentes/cabecalho/cabecalho';
 
 @Component({
   selector: 'app-formulario-contato',
@@ -20,8 +21,9 @@ import { MensagemErro } from '../../componentes/mensagem-erro/mensagem-erro';
     Container,
     Separador,
     ReactiveFormsModule,
-    RouterLink,
+
     MensagemErro,
+    Cabecalho,
   ],
   templateUrl: './formulario-contato.html',
   styleUrl: './formulario-contato.css',

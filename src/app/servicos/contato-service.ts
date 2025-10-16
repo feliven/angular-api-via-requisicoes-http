@@ -34,7 +34,7 @@ export class ContatoService {
     return this.http.put<InterfaceContato>(urlComID, contato);
   }
 
-  editarOuSalvarContato(
+  criarOuEditarContato(
     contato: InterfaceContato
   ): Observable<InterfaceContato> {
     if (contato.id) {

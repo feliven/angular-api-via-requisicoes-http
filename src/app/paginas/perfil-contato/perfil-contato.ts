@@ -17,7 +17,7 @@ export class PerfilContato implements OnInit {
     nome: 'eu',
     telefone: '1234',
     email: 'eu@eu',
-    aniversario: '10/10/1910',
+    aniversario: '1910-10-10',
     redes: 'eu.com',
   };
 

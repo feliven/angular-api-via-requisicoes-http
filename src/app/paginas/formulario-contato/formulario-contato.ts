@@ -6,7 +6,7 @@ import {
   ReactiveFormsModule,
   Validators,
 } from '@angular/forms';
-import { Router, RouterLink } from '@angular/router';
+import { ActivatedRoute, Router, RouterLink } from '@angular/router';
 import { Container } from '../../componentes/container/container';
 import { Separador } from '../../componentes/separador/separador';
 import { ContatoService } from '../../servicos/contato-service';
@@ -27,10 +27,15 @@ import { InterfaceContato } from '../../interfaces/interface-contato';
 export class FormularioContato implements OnInit {
   formularioContato!: FormGroup;
 
-  constructor(private contatoService: ContatoService, private router: Router) {}
+  constructor(
+    private contatoService: ContatoService,
+    private router: Router,
+    private activatedRoute: ActivatedRoute
+  ) {}
 
   ngOnInit() {
     this.inicializarFormulario();
+    this.carregarContato();
   }
 
   inicializarFormulario() {
@@ -44,11 +49,29 @@ export class FormularioContato implements OnInit {
     });
   }
 
+  carregarContato() {
+    const id = this.activatedRoute.snapshot.paramMap.get('id');
+
+    if (id) {
+      const idComoNumber = parseInt(id);
+      this.contatoService
+        .buscarPorID(idComoNumber)
+        .subscribe((contato) => this.formularioContato.patchValue(contato));
+    }
+  }
+
   salvarContato() {
+    const novoContato: InterfaceContato = this.formularioContato.value;
+    const id = this.activatedRoute.snapshot.paramMap.get('id');
+
+    if (id) {
+      const idComoNumber = parseInt(id);
+      novoContato.id = idComoNumber;
+    }
+
     if (this.formularioContato.valid) {
       console.log(this.formularioContato.value);
-      const novoContato: InterfaceContato = this.formularioContato.value;
-      this.contatoService.setContato(novoContato).subscribe(() => {
+      this.contatoService.criarOuEditarContato(novoContato).subscribe(() => {
         this.formularioContato.reset();
         this.router.navigateByUrl('/lista-contatos');
       });

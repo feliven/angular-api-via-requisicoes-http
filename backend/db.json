@@ -2,7 +2,7 @@
   "contatos": [
     {
       "nome": "Maria",
-      "telefone": "99 99999999",
+      "telefone": "9999999999",
       "email": "maria@email.com",
       "aniversario": "1995-06-01",
       "redes": "",
@@ -11,7 +11,7 @@
     },
     {
       "nome": "João",
-      "telefone": "88 88888888",
+      "telefone": "8888888888",
       "email": "joao@email.com",
       "aniversario": "1990-01-06",
       "redes": "",
@@ -19,19 +19,19 @@
       "id": 2
     },
     {
-      "id": 3,
       "nome": "Felipe",
       "telefone": "23423423",
-      "email": "f@f",
-      "aniversario": "02/02/2020",
+      "email": "f@f.com.gov",
+      "aniversario": "2020-02-02",
       "redes": "twiter",
-      "observacoes": "hello world"
+      "observacoes": "hello world",
+      "id": 3
     },
     {
       "nome": "ffewf",
       "telefone": "32432432",
       "email": "a@bm",
-      "aniversario": "02/02/2020",
+      "aniversario": "2020-02-02",
       "redes": "",
       "observacoes": "hello world",
       "id": 4
@@ -40,7 +40,7 @@
       "nome": "zdfdfsds",
       "telefone": "87858586",
       "email": "z@sh",
-      "aniversario": "02/02/2020",
+      "aniversario": "2020-02-02",
       "redes": "",
       "observacoes": "",
       "id": 5

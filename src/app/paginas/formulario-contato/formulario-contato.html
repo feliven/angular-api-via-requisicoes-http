@@ -27,6 +27,11 @@
         (change)="aoSelecionarArquivo($event)"
       />
     </div>
+    @if(formularioContato.get("avatar")?.value !== ""){
+    <figure>
+      <img [src]="formularioContato.get('avatar')?.value" />
+    </figure>
+    }
     <label for="nome">Nome</label>
     <input
       type="text"

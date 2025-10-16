@@ -40,10 +40,7 @@
       formControlName="nome"
     />
 
-    @if(formularioContato.get("nome")?.errors &&
-    formularioContato.get("nome")?.touched) {
-    <div class="mensagem-erro">Campo obrigatório!!</div>
-    }
+    <app-mensagem-erro [control]="getFormControl('nome')"></app-mensagem-erro>
     <label for="telefone">Número</label>
     <input
       type="number"
@@ -51,10 +48,10 @@
       placeholder="Digite o número de telefone..."
       formControlName="telefone"
     />
-    @if(formularioContato.get("telefone")?.errors &&
-    formularioContato.get("telefone")?.touched) {
-    <div class="mensagem-erro">Campo obrigatório!!</div>
-    }
+
+    <app-mensagem-erro
+      [control]="getFormControl('telefone')"
+    ></app-mensagem-erro>
     <label for="email">E-mail</label>
     <input
       type="email"
@@ -62,10 +59,7 @@
       placeholder="Insira o email do contato..."
       formControlName="email"
     />
-    @if(formularioContato.get("email")?.errors?.["email"] &&
-    formularioContato.get("email")?.touched) {
-    <div class="mensagem-erro">Formato inválido!! Cadê a @??</div>
-    }
+    <app-mensagem-erro [control]="getFormControl('email')"></app-mensagem-erro>
 
     <app-separador></app-separador>
     <label for="aniversario">Aniversário</label>

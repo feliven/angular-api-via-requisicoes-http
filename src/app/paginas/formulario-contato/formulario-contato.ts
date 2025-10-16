@@ -11,6 +11,7 @@ import { Container } from '../../componentes/container/container';
 import { Separador } from '../../componentes/separador/separador';
 import { ContatoService } from '../../servicos/contato-service';
 import { InterfaceContato } from '../../interfaces/interface-contato';
+import { MensagemErro } from '../../componentes/mensagem-erro/mensagem-erro';
 
 @Component({
   selector: 'app-formulario-contato',
@@ -20,6 +21,7 @@ import { InterfaceContato } from '../../interfaces/interface-contato';
     Separador,
     ReactiveFormsModule,
     RouterLink,
+    MensagemErro,
   ],
   templateUrl: './formulario-contato.html',
   styleUrl: './formulario-contato.css',
@@ -48,6 +50,14 @@ export class FormularioContato implements OnInit {
       redes: new FormControl('twiter'),
       observacoes: new FormControl('hello world'),
     });
+  }
+
+  getFormControl(nome: string): FormControl {
+    const control = this.formularioContato.get(nome);
+    if (!control) {
+      throw new Error('Controle do formulário não encontrado: ' + nome);
+    }
+    return control as FormControl;
   }
 
   carregarContato() {

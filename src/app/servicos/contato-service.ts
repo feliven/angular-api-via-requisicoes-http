@@ -18,4 +18,29 @@ export class ContatoService {
   setContato(contato: InterfaceContato) {
     return this.http.post<InterfaceContato>(this.enderecoAPI, contato);
   }
+
+  buscarPorID(id: number): Observable<InterfaceContato> {
+    const urlComID = `${this.enderecoAPI}/${id}`;
+    return this.http.get<InterfaceContato>(urlComID);
+  }
+
+  excluirContato(id: number): Observable<InterfaceContato> {
+    const urlComID = `${this.enderecoAPI}/${id}`;
+    return this.http.delete<InterfaceContato>(urlComID);
+  }
+
+  editarContato(contato: InterfaceContato): Observable<InterfaceContato> {
+    const urlComID = `${this.enderecoAPI}/${contato.id}`;
+    return this.http.put<InterfaceContato>(urlComID, contato);
+  }
+
+  editarOuSalvarContato(
+    contato: InterfaceContato
+  ): Observable<InterfaceContato> {
+    if (contato.id) {
+      return this.editarContato(contato);
+    } else {
+      return this.setContato(contato);
+    }
+  }
 }

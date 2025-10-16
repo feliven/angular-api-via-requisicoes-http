@@ -2,7 +2,8 @@ import { Component, OnInit } from '@angular/core';
 import { Container } from '../../componentes/container/container';
 import { Separador } from '../../componentes/separador/separador';
 import { InterfaceContato } from '../../interfaces/interface-contato';
-import { ActivatedRoute } from '@angular/router';
+import { ActivatedRoute, Router } from '@angular/router';
+import { ContatoService } from '../../servicos/contato-service';
 
 @Component({
   selector: 'app-perfil-contato',
@@ -20,11 +21,20 @@ export class PerfilContato implements OnInit {
     redes: 'eu.com',
   };
 
-  constructor(private activatedRoute: ActivatedRoute) {
-    //
-  }
+  constructor(
+    private activatedRoute: ActivatedRoute,
+    private contatoService: ContatoService,
+    private router: Router
+  ) {}
 
   ngOnInit(): void {
-    this.activatedRoute.snapshot.paramMap.get('id');
+    const id = this.activatedRoute.snapshot.paramMap.get('id');
+
+    if (id) {
+      const idComoNumber = parseInt(id);
+      this.contatoService
+        .buscarPorID(idComoNumber)
+        .subscribe((contato) => (this.contato = contato));
+    }
   }
 }

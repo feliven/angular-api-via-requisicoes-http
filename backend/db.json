@@ -21,7 +21,7 @@
     {
       "id": 3,
       "nome": "Felipe",
-      "telefone": 23423423,
+      "telefone": "23423423",
       "email": "f@f",
       "aniversario": "02/02/2020",
       "redes": "twiter",
@@ -29,7 +29,7 @@
     },
     {
       "nome": "ffewf",
-      "telefone": 32432432,
+      "telefone": "32432432",
       "email": "a@bm",
       "aniversario": "02/02/2020",
       "redes": "",
@@ -38,7 +38,7 @@
     },
     {
       "nome": "zdfdfsds",
-      "telefone": 87858586,
+      "telefone": "87858586",
       "email": "z@sh",
       "aniversario": "02/02/2020",
       "redes": "",
